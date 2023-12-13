@@ -1,7 +1,7 @@
 # youtube link 
 https://youtu.be/Vq7Lf5pI024?si=ythZ0mB4XGO3gXZO
 
-#github link
+#github link 
 https://github.com/CarlosIUSalazar/HealthGPT/tree/master
 
 # Steps to Run
