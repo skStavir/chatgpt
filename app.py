@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Set up OpenAI API credentials
 load_dotenv()
 #openai_organization = os.getenv('OPENAI_ORGANIZATION') This one is not necessary for this App
-openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_api_key = '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'
 model_id = 'gpt-3.5-turbo'
 
 # Define the Flask route that displays the form
@@ -25,6 +25,7 @@ def submit_form():
     patient_height = request.form.get('height', '')
     weight = request.form.get('weight', '')
     age = request.form.get('age', '')
+    symptoms = request.form.get('symptoms', '')
     gender = request.form.get('gender', '')
     walk = request.form.get('walk', '')
     exercise = request.form.get('exercise', '')
@@ -44,7 +45,7 @@ def submit_form():
 
 
     # Construct the mytext variable based on the form data
-    mytext = f"Prepare some lifestyle advice for the prevention of cancer, for a person with the following characteristics: {patient_height}cm tall weights {weight}kg and is a {age}-year-old {gender}.  This person took the following lifestyle and medical history questionnaire and next to each question is the answer obtained. Your essay please separate it into Introduction, Exercise, Sleep, Diet, Communication, Alcohol, Hobbies, Mental Health and Conclusion sections. "
+    mytext = f"Prepare some lifestyle advice for the Healthy life, for a person with the following characteristics: {patient_height}cm tall weights {weight}kg and is a {age}-year-old {gender}.  This person took the following lifestyle and medical history questionnaire and next to each question is the answer obtained. Your essay please separate it into Introduction, Exercise, Sleep, Diet, Communication, Alcohol, Hobbies, Mental Health and Conclusion sections. "
     mytext += f"\nPhysical Activity:\nHow much do you walk everyday? {walk}."
     mytext += f"\nIn a week how many times you exercise more than 30 minutes? {exercise}."
     mytext += f"\nDiet:\nEveryday how many portions of fruits and vegetables do you eat? {fruits_veggies}."
@@ -81,7 +82,7 @@ def submit_form():
     }
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {openai.api_key}"
+        "Authorization": f"Bearer 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"
     }
     response = requests.post(URL, headers=headers, json=payload, stream=False)
     print("responseeeee", response)

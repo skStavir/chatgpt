@@ -75,6 +75,7 @@ body {
 	#height,
 	#weight,
 	#age,
+	#symptoms,
 	#hippocampus {
 	width: 95%;
 	padding: 10px;

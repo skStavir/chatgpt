@@ -49,6 +49,8 @@
 			{% else %}
 				{% if line.startswith('Introduction:') %}
 					<br><h2>{{ line }}</h2>
+				{% elif line.startswith('Home remedies:') %}
+					<br><h2>{{ line }}</h2>	
 				{% elif line.startswith('Exercise:') %}
 					<br><h2>{{ line }}</h2>
 				{% elif line.startswith('Diet:') %}
