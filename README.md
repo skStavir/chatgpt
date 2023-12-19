@@ -12,13 +12,10 @@ Remember ChatGPT API is a paid service. If you get rate limiting errors it could
 You can create a subscription at: https://platform.openai.com/account/billing/overview
 
 # nginx commands
+## Nginx configuration file for editing
 sudo vi /etc/nginx/sites-enabled/default
 
-sudo nginx -t
-
-sudo service nginx restart
-
-# nginx configuration
+## nginx configuration
 server {
     listen 80;
     # server_name 34.239.195.167;
@@ -26,4 +23,12 @@ server {
     location /healthguide {
         proxy_pass http://127.0.0.1:5000/;
     }
+
+## Test the Nginx configuration for syntax errors
+sudo nginx -t
+
+## Restart Nginx to apply the changes
+sudo service nginx restart
+
+
 
