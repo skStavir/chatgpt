@@ -1,34 +1,26 @@
-# HealthGPT
-Uses ChatGPT API to get customised health advise based on a health questionnaire.
+HealthGuide
+Uses ChatGPT API to get customised health advise based on a healthGuide questionnaire.
 
-# Steps to Run
-1. Create a Virtual Environment in python with virtualenv `python -m venv venv`
-2.  `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
-3. Activate venv with '.\venv\Scripts\Activate' 
-4. Install requirements with `pip install -r requirements.txt`
-5. Run the app with `python app.py`
+Steps to Run
+Create a Virtual Environment in python with virtualenv python -m venv venv
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Activate venv with '.\venv\Scripts\Activate'
+Install requirements with pip install -r requirements.txt
+Run the app with python app.py
+Remember ChatGPT API is a paid service. If you get rate limiting errors it could be that your API key is not linked to a paid subscription. You can create a subscription at: https://platform.openai.com/account/billing/overview
 
-Remember ChatGPT API is a paid service. If you get rate limiting errors it could be that your API key is not linked to a paid subscription.
-You can create a subscription at: https://platform.openai.com/account/billing/overview
-
-# nginx commands
-## Nginx configuration file for editing
+nginx commands
+Nginx configuration file for editing
 sudo vi /etc/nginx/sites-enabled/default
 
-## nginx configuration
-server {
-    listen 80;
-    # server_name 34.239.195.167;
+nginx configuration
+server { listen 80; # server_name 34.239.195.167;
 
-    location /healthguide {
-        proxy_pass http://127.0.0.1:5000/;
-    }
-
-## Test the Nginx configuration for syntax errors
+location /healthguide {
+    proxy_pass http://127.0.0.1:5000/;
+}
+Test the Nginx configuration for syntax errors
 sudo nginx -t
 
-## Restart Nginx to apply the changes
+Restart Nginx to apply the changes
 sudo service nginx restart
-
-
-

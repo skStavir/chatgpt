@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Set up OpenAI API credentials
 load_dotenv()
 #openai_organization = os.getenv('OPENAI_ORGANIZATION') This one is not necessary for this App
-openai_api_key = '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'
+openai_api_key = ''
 model_id = 'gpt-3.5-turbo'
 
 # Define the Flask route that displays the form
@@ -82,7 +82,7 @@ def submit_form():
     }
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer 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"
+        "Authorization": f"Bearer "
     }
     response = requests.post(URL, headers=headers, json=payload, stream=False)
     print("responseeeee", response)
